@@ -1,2 +1,8 @@
 nginx:
   image: nginx:latest
+
+api:
+  image: registry.srcmesh.dev/workshop/user1:0.0.1
+
+redis:
+  image: redis:latest  
