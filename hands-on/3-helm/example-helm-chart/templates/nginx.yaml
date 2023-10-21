@@ -15,6 +15,12 @@ spec:
       containers:
       - name: nginx
         image: {{ .Values.nginx.image }}
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          timeoutSeconds: 5    
         imagePullPolicy: IfNotPresent
         volumeMounts:
           - mountPath: /etc/nginx/
